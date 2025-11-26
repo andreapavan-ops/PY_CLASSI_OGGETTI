@@ -7,15 +7,21 @@ class Studente:
     def aggiorna_voto(self, nuovo_voto):
         self.voto = nuovo_voto
 
+    def descrizione(self):
+        return f'{self.nome} ha {self.eta} anni e ha preso {self.voto}'
+
     def __str__(self):
         return f'{self.nome}, Età: {self.eta}, Voto: {self.voto}'        
 
-studenti = {
-    'Mario': Studente('Mario', '20', '28'),
-    'Luigi': Studente('Luigi', '20', '24')
-}        
 
+studenti = {
+    'Mario': Studente(nome='Mario', eta='20', voto='28'),
+    'Luigi': Studente(nome='Luigi', eta=20, voto=24)
+}
 
 studenti['Anna'] = Studente('Anna', 22, 30)
+
 for nome, studente in studenti.items():
-    print(nome, "->", studente)
+    print(nome, "->", studente.descrizione())
+
+
