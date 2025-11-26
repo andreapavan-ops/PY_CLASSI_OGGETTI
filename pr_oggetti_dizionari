@@ -1,0 +1,21 @@
+class Studente:
+    def __init__(self, nome, eta, voto):
+        self.nome = nome
+        self.eta = eta
+        self.voto = voto
+
+    def aggiorna_voto(self, nuovo_voto):
+        self.voto = nuovo_voto
+
+    def __str__(self):
+        return f'{self.nome}, Età: {self.eta}, Voto: {self.voto}'        
+
+studenti = {
+    'Mario': Studente('Mario', '20', '28'),
+    'Luigi': Studente('Luigi', '20', '24')
+}        
+
+
+studenti['Anna'] = Studente('Anna', 22, 30)
+for nome, studente in studenti.items():
+    print(nome, "->", studente)
